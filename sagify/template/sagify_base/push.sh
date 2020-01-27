@@ -7,8 +7,6 @@ profile=$4
 external_id=$5
 image=$6
 
-echo TEST TEST TEST 
-
 if [[ ! -z "$role" ]]; then 
     aws configure set profile.${role}.role_arn ${role}
     if [[ ! -z "$external_id" ]]; then
