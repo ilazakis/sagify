@@ -47,7 +47,7 @@ def push(obj, aws_region, iam_role_arn, aws_profile, external_id):
         iam_role_arn = "" if iam_role_arn is None else iam_role_arn
 
         logger.info("Started pushing Docker image to AWS ECS. It will take some time. Please, be patient...\n")
-
+        logger.info("test test test")
         api_push.push(
             dir=config.sagify_module_dir,
             docker_tag=obj['docker_tag'],
