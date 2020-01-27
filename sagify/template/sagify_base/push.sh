@@ -7,6 +7,8 @@ profile=$4
 external_id=$5
 image=$6
 
+echo TEST TEST TEST 
+
 if [[ ! -z "$role" ]]; then 
     aws configure set profile.${role}.role_arn ${role}
     if [[ ! -z "$external_id" ]]; then
@@ -22,10 +24,11 @@ if [[ ! -z "$role" ]]; then
 fi
 
 # Get the account number associated with the current IAM credentials
-
 if [[ ! -z "$profile" ]]; then
+    echo STS 1
     account=$(aws sts get-caller-identity --profile ${profile} --query Account --output text)
 else
+    echo STS 2
     account=$(aws sts get-caller-identity --query Account --output text)
 fi
 
